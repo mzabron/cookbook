@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.IngredientSelectionController" spacing="20" alignment="CENTER">
+    <ListView fx:id="ingredientListView" prefHeight="300" prefWidth="200"/>
+    <Button fx:id="findRecipeButton" text="Znajdź przepis" onAction="#findRecipes"/>
+</VBox>

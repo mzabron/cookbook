@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AddRecipeController" spacing="10" alignment="CENTER">
+    <TextField fx:id="recipeNameField" promptText="Nazwa przepisu" prefWidth="300"/>
+    <TextArea fx:id="instructionsArea" promptText="Instrukcje przygotowania" prefHeight="150" prefWidth="300"/>
+    <ListView fx:id="ingredientListView" prefHeight="200" prefWidth="300" />
+    <Button fx:id="addRecipeButton" text="Dodaj przepis" onAction="#addRecipe"/>
+</VBox>
