@@ -110,12 +110,15 @@ INSERT INTO ingredients (name) VALUES
                                    ('Ryż'),
                                    ('Mozzarella'),
                                    ('Drożdże'),
-                                   ('Śledzie'),
+                                   ('Śledź'),
                                    ('Pieczywo'),
-                                   ('Buraki'),
-                                   ('Kefir'),
+                                   ('Burak'),
+                                   ('Łosoś'),
                                    ('Kaczka'),
+                                   ('Ser'),
                                    ('Jabłko'),
+                                   ('Ocet'),
+                                   ('Musztarda'),
                                    ('Masło');
 
 CREATE TABLE IF NOT EXISTS recipe_ingredients (
@@ -180,6 +183,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 (8, (SELECT id FROM ingredients WHERE name = 'Cebula')),
 (8, (SELECT id FROM ingredients WHERE name = 'Ogórek')),
 (8, (SELECT id FROM ingredients WHERE name = 'Majonez')),
+(20, (SELECT id FROM ingredients WHERE name = 'Musztarda')),
 
 (9, (SELECT id FROM ingredients WHERE name = 'Mięso mielone')),
 (9, (SELECT id FROM ingredients WHERE name = 'Cebula')),
@@ -194,6 +198,100 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 (10, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
 (10, (SELECT id FROM ingredients WHERE name = 'Cebula')),
 (10, (SELECT id FROM ingredients WHERE name = 'Oliwa z oliwek')),
+
+(11, (SELECT id FROM ingredients WHERE name = 'Pstrąg')),
+(11, (SELECT id FROM ingredients WHERE name = 'Masło')),
+
+(12, (SELECT id FROM ingredients WHERE name = 'Mięso mielone')),
+(12, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(12, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(12, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(12, (SELECT id FROM ingredients WHERE name = 'Bułka tarta')),
+
+(13, (SELECT id FROM ingredients WHERE name = 'Mąka')),
+(13, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(13, (SELECT id FROM ingredients WHERE name = 'Mleko')),
+
+(14, (SELECT id FROM ingredients WHERE name = 'Fasola')),
+(14, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(14, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(14, (SELECT id FROM ingredients WHERE name = 'Kiełbasa')),
+(14, (SELECT id FROM ingredients WHERE name = 'Passata')),
+(14, (SELECT id FROM ingredients WHERE name = 'Papryka')),
+
+(15, (SELECT id FROM ingredients WHERE name = 'Wołowina')),
+(15, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(15, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(15, (SELECT id FROM ingredients WHERE name = 'Ogórek')),
+
+(16, (SELECT id FROM ingredients WHERE name = 'Ziemniak')),
+(16, (SELECT id FROM ingredients WHERE name = 'Makaron')),
+(16, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(16, (SELECT id FROM ingredients WHERE name = 'Śmietana')),
+
+(17, (SELECT id FROM ingredients WHERE name = 'Kurczak')),
+(17, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(17, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(17, (SELECT id FROM ingredients WHERE name = 'Mleko')),
+(17, (SELECT id FROM ingredients WHERE name = 'Papryka')),
+
+(18, (SELECT id FROM ingredients WHERE name = 'Passata')),
+(18, (SELECT id FROM ingredients WHERE name = 'Mozzarella')),
+(18, (SELECT id FROM ingredients WHERE name = 'Bazylia')),
+(18, (SELECT id FROM ingredients WHERE name = 'Oliwa z oliwek')),
+
+(19, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(19, (SELECT id FROM ingredients WHERE name = 'Majonez')),
+(20, (SELECT id FROM ingredients WHERE name = 'Musztarda')),
+-- niezły przepis XDDD
+
+(20, (SELECT id FROM ingredients WHERE name = 'Ziemniak')),
+(20, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(20, (SELECT id FROM ingredients WHERE name = 'Mąka')),
+
+(21, (SELECT id FROM ingredients WHERE name = 'Ryż')),
+(21, (SELECT id FROM ingredients WHERE name = 'Łosoś')),
+(21, (SELECT id FROM ingredients WHERE name = 'Ogórek')),
+
+(22, (SELECT id FROM ingredients WHERE name = 'Mąka')),
+(22, (SELECT id FROM ingredients WHERE name = 'Drożdże')),
+(22, (SELECT id FROM ingredients WHERE name = 'Oliwa z oliwek')),
+
+(23, (SELECT id FROM ingredients WHERE name = 'Pomidor')),
+(23, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(23, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(23, (SELECT id FROM ingredients WHERE name = 'Bulion warzywny')),
+(23, (SELECT id FROM ingredients WHERE name = 'Śmietana')),
+
+(24, (SELECT id FROM ingredients WHERE name = 'Kurczak')),
+(24, (SELECT id FROM ingredients WHERE name = 'Ryż')),
+(24, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(24, (SELECT id FROM ingredients WHERE name = 'Bulion warzywny')),
+(24, (SELECT id FROM ingredients WHERE name = 'Parmezan')),
+
+(25, (SELECT id FROM ingredients WHERE name = 'Pieczywo')),
+(25, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(25, (SELECT id FROM ingredients WHERE name = 'Masło')),
+
+(26, (SELECT id FROM ingredients WHERE name = 'Mąka')),
+(26, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+(26, (SELECT id FROM ingredients WHERE name = 'Mleko')),
+
+(27, (SELECT id FROM ingredients WHERE name = 'Burak')),
+(27, (SELECT id FROM ingredients WHERE name = 'Ogórek')),
+(27, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+
+(28, (SELECT id FROM ingredients WHERE name = 'Mąka')),
+(28, (SELECT id FROM ingredients WHERE name = 'Masło')),
+(28, (SELECT id FROM ingredients WHERE name = 'Jajka')),
+
+(29, (SELECT id FROM ingredients WHERE name = 'Śledź')),
+(29, (SELECT id FROM ingredients WHERE name = 'Cebula')),
+(20, (SELECT id FROM ingredients WHERE name = 'Ocet')),
+
+(30, (SELECT id FROM ingredients WHERE name = 'Kaczka')),
+(30, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
+(20, (SELECT id FROM ingredients WHERE name = 'Jabłko')),
 ;
 
 
