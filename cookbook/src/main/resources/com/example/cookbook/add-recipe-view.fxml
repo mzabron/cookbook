@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="827.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.AddRecipeController">
+<AnchorPane prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.AddRecipeController">
    <children>
       <Button fx:id="goBackButton" layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
       <Button fx:id="dodajPrzepisButton" layoutX="349.0" layoutY="350.0" mnemonicParsing="false" onAction="#dodajPrzepis" text="Dodaj przepis" />

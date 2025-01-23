@@ -44,13 +44,6 @@ public class RecipeListController {
     }
 
     @FXML
-    private void goBack() {
-        // Obsługa powrotu do poprzedniego okna
-        // Tutaj można użyć kodu do przełączania scen w zależności od implementacji aplikacji
-        System.out.println("Powrót do poprzedniego okna");
-    }
-
-    @FXML
     private void loadRecipes() {
         ObservableList<String> recipeTitles = FXCollections.observableArrayList();
 
@@ -154,10 +147,8 @@ public class RecipeListController {
 
     public void goBack(ActionEvent actionEvent) {
         try {
-            // Ładowanie nowego widoku
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             Parent root = loader.load();
-            // Pobranie aktualnej sceny i ustawienie nowego widoku
             Stage stage = (Stage) goBackButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);

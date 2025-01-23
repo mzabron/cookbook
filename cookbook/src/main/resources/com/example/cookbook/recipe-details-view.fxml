@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="378.0" prefWidth="524.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.cookbook.RecipeDetailsController">
+    <Label layoutX="20" layoutY="20" text="Tytuł przepisu:" />
+    <TextField fx:id="titleTextField" editable="false" layoutX="150" layoutY="20" />
+    <Label layoutX="20" layoutY="60" text="Składniki:" />
+    <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="150" layoutY="60" prefHeight="112.0" prefWidth="343.0" wrapText="true" />
+    <Label layoutX="20" layoutY="180" text="Instrukcje:" />
+    <TextArea fx:id="instructionsTextArea" editable="false" layoutX="150" layoutY="180" prefHeight="178.0" prefWidth="343.0" wrapText="true" />
+</AnchorPane>
