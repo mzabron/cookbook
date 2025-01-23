@@ -27,8 +27,8 @@ INSERT INTO recipes (title, ingredients, instructions) VALUES
 '1. Na patelni rozgrzej oliwę, podsmaż pokrojoną cebulę i czosnek. 2. Dodaj mielone mięso i smaż, aż się zrumieni. 3. Dodaj pokrojoną paprykę, pomidory i przyprawy. Gotuj na średnim ogniu przez 15 minut. 4. Dodaj fasolę, gotuj jeszcze przez 10 minut, aż danie się zagęści. 5. Podawaj z ryżem lub chlebem.')
 ,('Makaron z tuńczykiem', 'Składniki: 200g makaronu, 1 puszka tuńczyka w oliwie, 1 ząbek czosnku, 1/2 cebuli, 2 łyżki oliwy z oliwek, 1 łyżeczka soku z cytryny, sól, pieprz do smaku',
 '1. Ugotuj makaron al dente zgodnie z instrukcją na opakowaniu. 2. W międzyczasie na patelni rozgrzej oliwę i podsmaż pokrojoną cebulę oraz czosnek. 3. Dodaj odsączonego tuńczyka z puszki, sok z cytryny, sól i pieprz. 4. Wymieszaj ugotowany makaron z tuńczykiem i podawaj od razu.')
-,('Pstrąg pieczony w folii', 'Składniki: 4 filety z pstrąga, 1 cytryna, 1 łyżka masła, sól, pieprz, świeży tymianek',
-'1. Rozgrzej piekarnik do 180°C. 2. Na każdym filecie pstrąga połóż kawałek masła, dopraw solą, pieprzem i świeżym tymiankiem. 3. Skrop sokiem z cytryny. 4. Zawiń rybę w folię aluminiową i piecz przez 20 minut. 5. Podawaj z ulubionymi dodatkami.')
+,('Pstrąg pieczony w folii', 'Składniki: 4 filety z pstrąga, 1 cytryna, 1 łyżka masła, sól, pieprz, świeża bazylia',
+'1. Rozgrzej piekarnik do 180°C. 2. Na każdym filecie pstrąga połóż kawałek masła, dopraw solą, pieprzem i świeżyą bazylią. 3. Skrop sokiem z cytryny. 4. Zawiń rybę w folię aluminiową i piecz przez 20 minut. 5. Podawaj z ulubionymi dodatkami.')
 ,('Kotlety mielone', 'Składniki: 500g mielonego mięsa wieprzowego, 1 jajko, 1 cebula, 2 ząbki czosnku, 1/2 szklanki bułki tartej, sól, pieprz, olej do smażenia',
 '1. Posiekaj cebulę i czosnek, następnie podsmaż je na patelni. 2. W misce wymieszaj mięso mielone, jajko, bułkę tartą, cebulę, czosnek oraz przyprawy. 3. Formuj kotlety i smaż na rozgrzanym oleju przez około 5-7 minut z każdej strony. 4. Podawaj z ziemniakami lub sałatką.')
 ,('Naleśniki z dżemem', 'Składniki: 200g mąki, 2 jajka, 300ml mleka, 1 łyżka oleju, 1 łyżka cukru, dżem do smaku',
@@ -77,49 +77,49 @@ CREATE TABLE IF NOT EXISTS ingredients (
 
 -- Wstawienie składników do tabeli
 INSERT INTO ingredients (name) VALUES
-                                   ('Makaron'),
-                                   ('Czosnek'),
-                                   ('Oliwa z oliwek'),
                                    ('Bazylia'),
-                                   ('Parmezan'),
-                                   ('Pomidor'),
-                                   ('Cebula'),
-                                   ('Bulion warzywny'),
-                                   ('Kurczak'),
-                                   ('Ziemniak'),
-                                   ('Papryka'),
-                                   ('Ogórek'),
-                                   ('Feta'),
-                                   ('Oliwki'),
-                                   ('Mięso mielone'),
                                    ('Brokuły'),
-                                   ('Śmietana'),
-                                   ('Ogórek'),
-                                   ('Jajka'),
-                                   ('Majonez'),
-                                   ('Passata'),
-                                   ('Fasola'),
-                                   ('Chili'),
-                                   ('Tuńczyk'),
-                                   ('Pstrąg'),
                                    ('Bułka tarta'),
-                                   ('Mąka'),
-                                   ('Mleko'),
-                                   ('Kiełbasa'),
-                                   ('Wołowina'),
-                                   ('Ryż'),
-                                   ('Mozzarella'),
-                                   ('Drożdże'),
-                                   ('Śledź'),
-                                   ('Pieczywo'),
                                    ('Burak'),
-                                   ('Łosoś'),
-                                   ('Kaczka'),
-                                   ('Ser'),
+                                   ('Bulion warzywny'),
+                                   ('Cebula'),
+                                   ('Chili'),
+                                   ('Czosnek'),
+                                   ('Drożdże'),
+                                   ('Fasola'),
+                                   ('Feta'),
                                    ('Jabłko'),
-                                   ('Ocet'),
+                                   ('Jajka'),
+                                   ('Kaczka'),
+                                   ('Kiełbasa'),
+                                   ('Kurczak'),
+                                   ('Łosoś'),
+                                   ('Makaron'),
+                                   ('Majonez'),
+                                   ('Masło'),
+                                   ('Mąka'),
+                                   ('Mięso mielone'),
+                                   ('Mleko'),
+                                   ('Mozzarella'),
                                    ('Musztarda'),
-                                   ('Masło');
+                                   ('Ocet'),
+                                   ('Ogórek'),
+                                   ('Oliwa z oliwek'),
+                                   ('Oliwki'),
+                                   ('Papryka'),
+                                   ('Parmezan'),
+                                   ('Passata'),
+                                   ('Pieczywo'),
+                                   ('Pomidor'),
+                                   ('Pstrąg'),
+                                   ('Ryż'),
+                                   ('Ser'),
+                                   ('Śledź'),
+                                   ('Śmietana'),
+                                   ('Tuńczyk'),
+                                   ('Wołowina'),
+                                   ('Ziemniak');
+
 
 CREATE TABLE IF NOT EXISTS recipe_ingredients (
                                                   recipe_id INTEGER,
@@ -129,9 +129,7 @@ CREATE TABLE IF NOT EXISTS recipe_ingredients (
                                                   PRIMARY KEY (recipe_id, ingredient_id)
 );
 
--- Powiązanie składników z przepisami
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
--- Spaghetti Aglio e Olio
 (1, (SELECT id FROM ingredients WHERE name = 'Makaron')),
 (1, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
 (1, (SELECT id FROM ingredients WHERE name = 'Oliwa z oliwek')),
@@ -183,7 +181,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 (8, (SELECT id FROM ingredients WHERE name = 'Cebula')),
 (8, (SELECT id FROM ingredients WHERE name = 'Ogórek')),
 (8, (SELECT id FROM ingredients WHERE name = 'Majonez')),
-(20, (SELECT id FROM ingredients WHERE name = 'Musztarda')),
+(8, (SELECT id FROM ingredients WHERE name = 'Musztarda')),
 
 (9, (SELECT id FROM ingredients WHERE name = 'Mięso mielone')),
 (9, (SELECT id FROM ingredients WHERE name = 'Cebula')),
@@ -201,6 +199,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 
 (11, (SELECT id FROM ingredients WHERE name = 'Pstrąg')),
 (11, (SELECT id FROM ingredients WHERE name = 'Masło')),
+(11, (SELECT id FROM ingredients WHERE name = 'Bazylia')),
 
 (12, (SELECT id FROM ingredients WHERE name = 'Mięso mielone')),
 (12, (SELECT id FROM ingredients WHERE name = 'Jajka')),
@@ -243,7 +242,6 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 (19, (SELECT id FROM ingredients WHERE name = 'Jajka')),
 (19, (SELECT id FROM ingredients WHERE name = 'Majonez')),
 (20, (SELECT id FROM ingredients WHERE name = 'Musztarda')),
--- niezły przepis XDDD
 
 (20, (SELECT id FROM ingredients WHERE name = 'Ziemniak')),
 (20, (SELECT id FROM ingredients WHERE name = 'Jajka')),
@@ -287,12 +285,11 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id) VALUES
 
 (29, (SELECT id FROM ingredients WHERE name = 'Śledź')),
 (29, (SELECT id FROM ingredients WHERE name = 'Cebula')),
-(20, (SELECT id FROM ingredients WHERE name = 'Ocet')),
+(29, (SELECT id FROM ingredients WHERE name = 'Ocet')),
 
 (30, (SELECT id FROM ingredients WHERE name = 'Kaczka')),
 (30, (SELECT id FROM ingredients WHERE name = 'Czosnek')),
-(20, (SELECT id FROM ingredients WHERE name = 'Jabłko')),
-;
+(30, (SELECT id FROM ingredients WHERE name = 'Jabłko'));
 
 
 
