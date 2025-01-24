@@ -3,11 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="378.0" prefWidth="524.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.cookbook.RecipeDetailsController">
-    <Label layoutX="20" layoutY="20" text="Tytuł przepisu:" />
-    <TextField fx:id="titleTextField" editable="false" layoutX="150" layoutY="20" />
-    <Label layoutX="20" layoutY="60" text="Składniki:" />
-    <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="150" layoutY="60" prefHeight="112.0" prefWidth="343.0" wrapText="true" />
-    <Label layoutX="20" layoutY="180" text="Instrukcje:" />
-    <TextArea fx:id="instructionsTextArea" editable="false" layoutX="150" layoutY="180" prefHeight="178.0" prefWidth="343.0" wrapText="true" />
+<AnchorPane prefHeight="520.0" prefWidth="550.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.cookbook.RecipeDetailsController"
+            style="-fx-background-color: #A8B1D4;">
+    <Label layoutX="20" layoutY="20" style="-fx-font-size: 16px; -fx-font-family: Graphik; -fx-fill: #577253;" text="TYTUŁ PRZEPISU:" />
+    <TextField fx:id="titleTextField" editable="false" layoutX="160" layoutY="20" prefWidth="343.0" style="-fx-background-color: #F1E9BB; -fx-background-radius: 5;
+        -fx-font-size: 13px; -fx-font-family: Graphik; -fx-fill: #577253;"/>
+    <Label layoutX="20" layoutY="60" style="-fx-font-size: 16px; -fx-font-family: Graphik; -fx-fill: #577253;" text="SKŁADNIKI:" />
+    <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="160" layoutY="60" prefHeight="112.0" prefWidth="343.0" wrapText="true"/>
+    <Label layoutX="20" layoutY="180" style="-fx-font-size: 16px; -fx-font-family: Graphik; -fx-fill: #577253;" text="INSTRUKCJE:" />
+    <TextArea fx:id="instructionsTextArea" editable="false" layoutX="160" layoutY="180" prefHeight="178.0" prefWidth="343.0" wrapText="true"/>
 </AnchorPane>

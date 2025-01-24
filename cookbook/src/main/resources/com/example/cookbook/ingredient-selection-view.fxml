@@ -1,62 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.IngredientSelectionController">
+<AnchorPane prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.IngredientSelectionController" style="-fx-background-color: #A8B1D4;">
    <children>
-      <Button fx:id="szukajPrzepisowButton" layoutX="83.0" layoutY="287.0" mnemonicParsing="false" onAction="#szukajPrzepisow" text="Szukaj przepisów" />
-      <Button fx:id="goBackButton" layoutX="494.0" layoutY="313.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
-      <ScrollPane layoutX="36.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0">
+      <!-- Tytuł -->
+      <Text layoutX="30.0" layoutY="40.0" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-font-family: Graphik; -fx-fill: #577253;" text="WPROWADŹ SKŁADNIKI, wybierz te, które posiadasz:">
+         <font>
+            <Font name="Graphik-bold" size="25.0" />
+         </font></Text>
+
+      <!-- Przycisk Szukaj przepisów -->
+      <VBox layoutX="250.0" layoutY="425.0" alignment="CENTER">
+         <Button fx:id="szukajPrzepisowButton" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#szukajPrzepisow"
+                 style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+            <graphic>
+               <ImageView fitHeight="40" fitWidth="40">
+                  <image>
+                     <Image url="@../../../images/magnifier.png" />
+                  </image></ImageView>
+            </graphic>
+         </Button>
+         <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Szukaj przepisów">
+            <font>
+               <Font name="Graphik-Regular" size="14.0" />
+            </font></Text>
+      </VBox>
+
+      <!-- Przycisk powrót -->
+      <VBox layoutX="450.0" layoutY="425.0" alignment="CENTER">
+         <Button fx:id="goBackButton" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#goBack"
+                 style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+            <graphic>
+               <ImageView fitHeight="40" fitWidth="40">
+                  <image>
+                     <Image url="@../../../images/arrow1.png" />
+                  </image></ImageView>
+            </graphic>
+         </Button>
+         <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Powrót">
+            <font>
+               <Font name="Graphik-Regular" size="14.0" />
+            </font></Text>
+      </VBox>
+
+      <!-- Lista z checkboxami -->
+      <ScrollPane layoutX="30.0" layoutY="80.0" prefHeight="330.0" prefWidth="200.0" style="-fx-background-color: #A8B1D4;">
          <content>
-            <VBox prefHeight="784.0" prefWidth="184.0">
+            <VBox spacing="10" style="-fx-background-color: #A8B1D4;" >
                <children>
                   <CheckBox fx:id="c1" mnemonicParsing="false" text="Bazylia" />
-                  <CheckBox fx:id="c2" mnemonicParsing="false" text="Brokuły" />
+                  <CheckBox fx:id="c2" mnemonicParsing="false" text="Brokuły 🥦" />
                   <CheckBox fx:id="c3" mnemonicParsing="false" text="Bułka tarta" />
                   <CheckBox fx:id="c4" mnemonicParsing="false" text="Burak" />
-                  <CheckBox fx:id="c5" mnemonicParsing="false" text="Bulion warzywny" />
-                  <CheckBox fx:id="c6" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c7" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c8" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c9" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c10" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c11" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c12" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c13" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c14" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c15" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c16" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c17" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c18" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c19" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c20" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c21" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c22" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c23" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c24" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c25" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c26" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c27" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c28" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c29" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c30" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c31" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c32" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c33" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c34" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c35" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c36" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c37" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c38" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c39" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c40" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c41" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c42" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="c5" mnemonicParsing="false" text="Bulion warzywny                          " />
+                  <CheckBox fx:id="c6" mnemonicParsing="false" text="Cebula 🧅" />
+                  <CheckBox fx:id="c7" mnemonicParsing="false" text="Chili 🌶️" />
+                  <CheckBox fx:id="c8" mnemonicParsing="false" text="Czosnek 🧄" />
+                  <CheckBox fx:id="c9" mnemonicParsing="false" text="Drożdże" />
+                  <CheckBox fx:id="c10" mnemonicParsing="false" text="Fasola 🫘" />
+                  <CheckBox fx:id="c11" mnemonicParsing="false" text="Feta" />
+                  <CheckBox fx:id="c12" mnemonicParsing="false" text="Jabłko 🍎" />
+                  <CheckBox fx:id="c13" mnemonicParsing="false" text="Jajka 🥚" />
+                  <CheckBox fx:id="c14" mnemonicParsing="false" text="Kaczka 🦆" />
+                  <CheckBox fx:id="c15" mnemonicParsing="false" text="Kiełbasa " />
+                  <CheckBox fx:id="c16" mnemonicParsing="false" text="Kurczak 🐔" />
+                  <CheckBox fx:id="c17" mnemonicParsing="false" text="Łosoś 🐟" />
+                  <CheckBox fx:id="c18" mnemonicParsing="false" text="Makaron " />
+                  <CheckBox fx:id="c19" mnemonicParsing="false" text="Majonez " />
+                  <CheckBox fx:id="c20" mnemonicParsing="false" text="Masło 🧈" />
+                  <CheckBox fx:id="c21" mnemonicParsing="false" text="Mąka" />
+                  <CheckBox fx:id="c22" mnemonicParsing="false" text="Mięso mielone" />
+                  <CheckBox fx:id="c23" mnemonicParsing="false" text="Mleko 🥛" />
+                  <CheckBox fx:id="c24" mnemonicParsing="false" text="Mozzarella" />
+                  <CheckBox fx:id="c25" mnemonicParsing="false" text="Musztarda" />
+                  <CheckBox fx:id="c26" mnemonicParsing="false" text="Ocet 🍶" />
+                  <CheckBox fx:id="c27" mnemonicParsing="false" text="Ogórek 🥒" />
+                  <CheckBox fx:id="c28" mnemonicParsing="false" text="Oliwa z oliwek" />
+                  <CheckBox fx:id="c29" mnemonicParsing="false" text="Oliwki 🫒" />
+                  <CheckBox fx:id="c30" mnemonicParsing="false" text="Papryka 🫑" />
+                  <CheckBox fx:id="c31" mnemonicParsing="false" text="Parmezan" />
+                  <CheckBox fx:id="c32" mnemonicParsing="false" text="Passata 🥫" />
+                  <CheckBox fx:id="c33" mnemonicParsing="false" text="Pieczywo 🥖" />
+                  <CheckBox fx:id="c34" mnemonicParsing="false" text="Pomidor 🍅" />
+                  <CheckBox fx:id="c35" mnemonicParsing="false" text="Pstrąg 🐟" />
+                  <CheckBox fx:id="c36" mnemonicParsing="false" text="Ryż " />
+                  <CheckBox fx:id="c37" mnemonicParsing="false" text="Ser 🧀" />
+                  <CheckBox fx:id="c38" mnemonicParsing="false" text="Śledź 🐟" />
+                  <CheckBox fx:id="c39" mnemonicParsing="false" text="Śmietana 🥛" />
+                  <CheckBox fx:id="c40" mnemonicParsing="false" text="Tuńczyk 🐟" />
+                  <CheckBox fx:id="c41" mnemonicParsing="false" text="Wołowina 🥩" />
+                  <CheckBox fx:id="c42" mnemonicParsing="false" text="Ziemniak 🥔" />
                </children>
             </VBox>
          </content>
       </ScrollPane>
-      <ListView fx:id="recipesListView" layoutX="257.0" layoutY="50.0" prefHeight="200.0" prefWidth="324.0" />
+      <ListView fx:id="recipesListView" layoutX="260.0" layoutY="80.0" prefHeight="330.0" prefWidth="460.0"  />
    </children>
 </AnchorPane>

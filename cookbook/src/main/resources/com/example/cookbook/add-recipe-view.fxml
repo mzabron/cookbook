@@ -3,7 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.AddRecipeController">
+<AnchorPane prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.AddRecipeController"
+            style="-fx-background-color: #A8B1D4;">
    <children>
       <Button fx:id="goBackButton" layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
       <Button fx:id="dodajPrzepisButton" layoutX="349.0" layoutY="350.0" mnemonicParsing="false" onAction="#dodajPrzepis" text="Dodaj przepis" />
@@ -14,47 +15,47 @@
             <VBox prefHeight="816.0" prefWidth="180.0">
                <children>
                   <CheckBox fx:id="c1" mnemonicParsing="false" text="Bazylia" />
-                  <CheckBox fx:id="c2" mnemonicParsing="false" text="Brokuły" />
+                  <CheckBox fx:id="c2" mnemonicParsing="false" text="Brokuły 🥦" />
                   <CheckBox fx:id="c3" mnemonicParsing="false" text="Bułka tarta" />
-                  <CheckBox fx:id="c4" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c5" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c6" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c7" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c8" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c9" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c10" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c11" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c12" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c13" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c14" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c15" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c16" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c17" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c18" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c19" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c20" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c21" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c22" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c23" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c24" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c25" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c26" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c27" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c28" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c29" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c30" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c31" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c32" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c33" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c34" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c35" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c36" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c37" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c38" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c39" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c40" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c41" mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox fx:id="c42" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="c4" mnemonicParsing="false" text="Burak" />
+                  <CheckBox fx:id="c5" mnemonicParsing="false" text="Bulion warzywny             " />
+                  <CheckBox fx:id="c6" mnemonicParsing="false" text="Cebula 🧅" />
+                  <CheckBox fx:id="c7" mnemonicParsing="false" text="Chili 🌶️" />
+                  <CheckBox fx:id="c8" mnemonicParsing="false" text="Czosnek 🧄" />
+                  <CheckBox fx:id="c9" mnemonicParsing="false" text="Drożdże" />
+                  <CheckBox fx:id="c10" mnemonicParsing="false" text="Fasola 🫘" />
+                  <CheckBox fx:id="c11" mnemonicParsing="false" text="Feta" />
+                  <CheckBox fx:id="c12" mnemonicParsing="false" text="Jabłko 🍎" />
+                  <CheckBox fx:id="c13" mnemonicParsing="false" text="Jajka 🥚" />
+                  <CheckBox fx:id="c14" mnemonicParsing="false" text="Kaczka 🦆" />
+                  <CheckBox fx:id="c15" mnemonicParsing="false" text="Kiełbasa " />
+                  <CheckBox fx:id="c16" mnemonicParsing="false" text="Kurczak 🐔" />
+                  <CheckBox fx:id="c17" mnemonicParsing="false" text="Łosoś 🐟" />
+                  <CheckBox fx:id="c18" mnemonicParsing="false" text="Makaron " />
+                  <CheckBox fx:id="c19" mnemonicParsing="false" text="Majonez " />
+                  <CheckBox fx:id="c20" mnemonicParsing="false" text="Masło 🧈" />
+                  <CheckBox fx:id="c21" mnemonicParsing="false" text="Mąka" />
+                  <CheckBox fx:id="c22" mnemonicParsing="false" text="Mięso mielone" />
+                  <CheckBox fx:id="c23" mnemonicParsing="false" text="Mleko 🥛" />
+                  <CheckBox fx:id="c24" mnemonicParsing="false" text="Mozzarella" />
+                  <CheckBox fx:id="c25" mnemonicParsing="false" text="Musztarda" />
+                  <CheckBox fx:id="c26" mnemonicParsing="false" text="Ocet 🍶" />
+                  <CheckBox fx:id="c27" mnemonicParsing="false" text="Ogórek 🥒" />
+                  <CheckBox fx:id="c28" mnemonicParsing="false" text="Oliwa z oliwek" />
+                  <CheckBox fx:id="c29" mnemonicParsing="false" text="Oliwki 🫒" />
+                  <CheckBox fx:id="c30" mnemonicParsing="false" text="Papryka 🫑" />
+                  <CheckBox fx:id="c31" mnemonicParsing="false" text="Parmezan" />
+                  <CheckBox fx:id="c32" mnemonicParsing="false" text="Passata 🥫" />
+                  <CheckBox fx:id="c33" mnemonicParsing="false" text="Pieczywo 🥖" />
+                  <CheckBox fx:id="c34" mnemonicParsing="false" text="Pomidor 🍅" />
+                  <CheckBox fx:id="c35" mnemonicParsing="false" text="Pstrąg 🐟" />
+                  <CheckBox fx:id="c36" mnemonicParsing="false" text="Ryż " />
+                  <CheckBox fx:id="c37" mnemonicParsing="false" text="Ser 🧀" />
+                  <CheckBox fx:id="c38" mnemonicParsing="false" text="Śledź 🐟" />
+                  <CheckBox fx:id="c39" mnemonicParsing="false" text="Śmietana 🥛" />
+                  <CheckBox fx:id="c40" mnemonicParsing="false" text="Tuńczyk 🐟" />
+                  <CheckBox fx:id="c41" mnemonicParsing="false" text="Wołowina 🥩" />
+                  <CheckBox fx:id="c42" mnemonicParsing="false" text="Ziemniak 🥔" />
                </children>
             </VBox>
          </content></ScrollPane>
