@@ -16,12 +16,12 @@ import java.util.List;
 public class AddRecipeController {
     @FXML
     private TextField titleTextField;
-
     @FXML
     private Button goBackButton;
-
     @FXML
     private TextArea instructionsTextArea;
+    @FXML
+    private TextField dodajSkladnikTextField;
 
     @FXML
     private CheckBox c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
@@ -66,7 +66,6 @@ public class AddRecipeController {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
             connection.setAutoCommit(false);
 
-            // 1. Dodanie przepisu do tabeli `recipes`
             String insertRecipeSQL = "INSERT INTO recipes (title, ingredients, instructions) VALUES (?, ?, ?)";
             try (PreparedStatement insertRecipeStmt = connection.prepareStatement(insertRecipeSQL)) {
                 insertRecipeStmt.setString(1, title);
@@ -118,6 +117,61 @@ public class AddRecipeController {
             showAlert(Alert.AlertType.ERROR, "Błąd", "Wystąpił problem podczas dodawania przepisu.");
         }
     }
+
+    @FXML
+    public void dodajSkladnik() {
+        String newIngredient = dodajSkladnikTextField.getText().trim();
+
+        if (newIngredient.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Błąd", "Nazwa składnika nie może być pusta!");
+            return;
+        }
+
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
+            String insertIngredientSQL = "INSERT INTO ingredients (name) VALUES (?)";
+            try (PreparedStatement statement = connection.prepareStatement(insertIngredientSQL)) {
+                statement.setString(1, newIngredient);
+                statement.executeUpdate();
+
+                showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został dodany pomyślnie!");
+                dodajSkladnikTextField.clear();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Błąd", "Wystąpił problem podczas dodawania składnika.");
+        }
+    }
+
+    @FXML
+    public void usunSkladnik() {
+        String ingredientToRemove = dodajSkladnikTextField.getText().trim();
+
+        if (ingredientToRemove.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Błąd", "Nazwa składnika nie może być pusta!");
+            return;
+        }
+
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
+            String deleteIngredientSQL = "DELETE FROM ingredients WHERE name = ?";
+            try (PreparedStatement statement = connection.prepareStatement(deleteIngredientSQL)) {
+                statement.setString(1, ingredientToRemove);
+
+                int rowsAffected = statement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został usunięty pomyślnie!");
+                    dodajSkladnikTextField.clear();
+                } else {
+                    showAlert(Alert.AlertType.WARNING, "Błąd", "Składnik o podanej nazwie nie istnieje!");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Błąd", "Wystąpił problem podczas usuwania składnika.");
+        }
+    }
+
+
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
