@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.RecipeListController"
-            style="-fx-background-color: #A8B1D4;">
+<AnchorPane prefHeight="520.0" prefWidth="780.0" style="-fx-background-color: #A8B1D4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.RecipeListController">
    <children>
-      <Button fx:id="goBackButton" layoutX="499.0" layoutY="346.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
-      <ChoiceBox fx:id="recipesChoiceBox" layoutX="144.0" layoutY="25.0" prefHeight="25.0" prefWidth="413.0" />
-      <TextArea fx:id="instructionsTextArea" editable="false" wrapText="true" layoutX="141.0" layoutY="173.0" prefHeight="153.0" prefWidth="413.0" />
-      <Button fx:id="usunPrzepisButton" layoutX="358.0" layoutY="346.0" mnemonicParsing="false" onAction="#usunPrzepis" text="Usuń przepis" />
-      <TextArea fx:id="ingredientsTextArea" editable="false" wrapText="true" layoutX="146.0" layoutY="64.0" prefHeight="96.0" prefWidth="413.0" />
+      <Label layoutX="50.0" layoutY="30.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-background-color: #F1E9BB; -fx-fill: #577253;" text="LISTA PRZEPISÓW:" />
+
+      <ListView fx:id="recipesListView" layoutX="50.0" layoutY="80.0" onMouseClicked="#handleRecipeClick" prefHeight="300.0" prefWidth="680.0" />
+
+      <!-- Przycisk filtruj -->
+      <Button fx:id="filtrujButton" layoutX="551.0" layoutY="394.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#filtruj" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+         <graphic>
+            <ImageView fitHeight="40" fitWidth="40">
+               <image>
+                  <Image url="@../../../images/arrow2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="568.0" layoutY="480.0" style="-fx-font-size: 14px; -fx-font-family: Graphik; -fx-fill: #577253;" text="Filtruj">
+         <font>
+            <Font name="Graphik-Regular" size="14.0" />
+         </font>
+      </Text>
+
+      <!-- Przycisk Powrót -->
+      <Button fx:id="goBackButton" layoutX="659.0" layoutY="394.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+         <graphic>
+            <ImageView fitHeight="40" fitWidth="40">
+               <image>
+                  <Image url="@../../../images/arrow1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="671.0" layoutY="479.0" style="-fx-font-size: 14px; -fx-font-family: Graphik; -fx-fill: #577253;" text="Powrót">
+         <font>
+            <Font name="Graphik-Regular" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

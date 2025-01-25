@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 public class RecipeDetailsController {
 
     @FXML
-    private TextField titleTextField;
+    public TextField titleTextField;
 
     @FXML
     private TextArea ingredientsTextArea;
@@ -19,6 +19,10 @@ public class RecipeDetailsController {
         titleTextField.setText(title);
         ingredientsTextArea.setText(ingredients);
         instructionsTextArea.setText(instructions);
+    }
+
+    public void titleTextField(String recipeTitle) {
+
     }
 }
 

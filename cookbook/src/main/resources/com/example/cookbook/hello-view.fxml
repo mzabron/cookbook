@@ -5,56 +5,66 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <StackPane minHeight="520" minWidth="780" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.HelloController">
-    <HBox alignment="center" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="60" style="-fx-background-color: #A8B1D4;">
 
-        <!-- Przycisk Wprowadź składniki -->
-        <VBox alignment="center" spacing="10">
-            <Button fx:id="goToIngredientSelectionButton" minHeight="150" minWidth="150" onAction="#goToIngredientSelection" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
-                <!-- Dodanie obrazka jako grafiki przycisku -->
-                <graphic>
-                    <ImageView fitHeight="80" fitWidth="80">
-                        <image>
-                            <Image url="@../../../images/apple.png" />
-                        </image></ImageView>
-                </graphic>
-            </Button>
-            <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Wprowadź składniki">
-                <font>
-                    <Font name="Graphik-Regular" size="13.0" />
-                </font></Text>
-        </VBox>
+    <VBox alignment="center" spacing="20" style="-fx-background-color: #A8B1D4;">
 
-        <!-- Przycisk Zobacz przepisy -->
-        <VBox alignment="center" spacing="10">
-            <Button fx:id="goToRecipeListButton" minHeight="150" minWidth="150" onAction="#goToRecipeList" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
-                <!-- Dodanie obrazka jako grafiki przycisku -->
-                <graphic>
-                    <ImageView fitHeight="80" fitWidth="80">
-                        <image>
-                            <Image url="@../../../images/list.png" />
-                        </image></ImageView>
-                </graphic>
-            </Button>
-            <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Zobacz przepisy" />
-        </VBox>
+        <Text style="-fx-font-size: 36px; -fx-font-family: Graphik; -fx-font-weight: bold; -fx-fill: #577253;" text="COOKBOOK" />
 
-        <!-- Przycisk Dodaj przepis -->
-        <VBox alignment="center" spacing="10">
-            <Button fx:id="goToAddRecipeButton" minHeight="150" minWidth="150" onAction="#goToAddRecipe" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
-                <!-- Dodanie obrazka jako grafiki przycisku -->
-                <graphic>
-                    <ImageView fitHeight="70" fitWidth="70">
-                        <image>
-                            <Image url="@../../../images/plus.png" />
-                        </image></ImageView>
-                </graphic>
-            </Button>
-            <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Dodaj przepis">
-                <font>
-                    <Font name="Graphik-Regular" size="13.0" />
-                </font></Text>
-        </VBox>
-    </HBox>
+        <HBox alignment="center" spacing="60">
+
+            <VBox alignment="center" spacing="10">
+                <Button fx:id="goToIngredientSelectionButton" minHeight="150" minWidth="150" onAction="#goToIngredientSelection" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
+                    <graphic>
+                        <ImageView fitHeight="70" fitWidth="70">
+                            <image>
+                                <Image url="@../../../images/apple.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Wprowadź składniki" />
+            </VBox>
+
+            <VBox alignment="center" spacing="10">
+                <Button fx:id="goToRecipeListButton" minHeight="150" minWidth="150" onAction="#goToRecipeList" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
+                    <graphic>
+                        <ImageView fitHeight="70" fitWidth="70">
+                            <image>
+                                <Image url="@../../../images/list.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Zobacz przepisy" />
+            </VBox>
+
+            <VBox alignment="center" spacing="10">
+                <Button fx:id="goToAddRecipeButton" minHeight="150" minWidth="150" onAction="#goToAddRecipe" style="-fx-background-color: #F1E9BB; -fx-background-radius: 30;">
+                    <graphic>
+                        <ImageView fitHeight="70" fitWidth="70">
+                            <image>
+                                <Image url="@../../../images/plus.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Dodaj przepis" />
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <AnchorPane>
+        <Button fx:id="heartButton" layoutX="700" layoutY="450" minHeight="50" minWidth="50"
+                style="-fx-background-color: #A8B1D4; -fx-background-radius: 30;">
+            <graphic>
+                <ImageView fitHeight="30" fitWidth="30">
+                    <image>
+                        <Image url="@../../../images/heart2.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </AnchorPane>
 </StackPane>
+
