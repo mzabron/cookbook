@@ -35,16 +35,18 @@ public class AddRecipeController {
     }
 
     private void loadIngredientsFromDatabase() {
-        ingredientContainer.getChildren().clear(); // Usuwamy poprzednie checkboxy
+        ingredientContainer.getChildren().clear();
+        checkBoxList.clear();
 
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
-            String query = "SELECT name FROM ingredients";
+            String query = "SELECT name FROM ingredients ORDER BY name";
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(query)) {
 
                 while (resultSet.next()) {
                     String ingredientName = resultSet.getString("name");
                     CheckBox checkBox = new CheckBox(ingredientName);
+                    checkBoxList.add(checkBox);
                     ingredientContainer.getChildren().add(checkBox);
                 }
             }
@@ -148,6 +150,7 @@ public class AddRecipeController {
 
                 showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został dodany pomyślnie!");
                 dodajSkladnikTextField.clear();
+                loadIngredientsFromDatabase(); // Odświeżanie listy składników
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -174,6 +177,7 @@ public class AddRecipeController {
                 if (rowsAffected > 0) {
                     showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został usunięty pomyślnie!");
                     dodajSkladnikTextField.clear();
+                    loadIngredientsFromDatabase(); // Odświeżanie listy składników
                 } else {
                     showAlert(Alert.AlertType.WARNING, "Błąd", "Składnik o podanej nazwie nie istnieje!");
                 }
@@ -183,8 +187,6 @@ public class AddRecipeController {
             showAlert(Alert.AlertType.ERROR, "Błąd", "Wystąpił problem podczas usuwania składnika.");
         }
     }
-
-
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
@@ -209,7 +211,7 @@ public class AddRecipeController {
             Stage stage = (Stage) goBackButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
