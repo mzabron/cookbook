@@ -3,13 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.RecipeListController"
-            style="-fx-background-color: #A8B1D4;">
+<AnchorPane prefHeight="520.0" prefWidth="780.0" style="-fx-background-color: #A8B1D4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.RecipeListController">
    <children>
-      <Button fx:id="goBackButton" layoutX="499.0" layoutY="346.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
+      <Button fx:id="goBackButton" layoutX="662.0" layoutY="424.0" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
       <ChoiceBox fx:id="recipesChoiceBox" layoutX="144.0" layoutY="25.0" prefHeight="25.0" prefWidth="413.0" />
-      <TextArea fx:id="instructionsTextArea" editable="false" wrapText="true" layoutX="141.0" layoutY="173.0" prefHeight="153.0" prefWidth="413.0" />
-      <Button fx:id="usunPrzepisButton" layoutX="358.0" layoutY="346.0" mnemonicParsing="false" onAction="#usunPrzepis" text="Usuń przepis" />
-      <TextArea fx:id="ingredientsTextArea" editable="false" wrapText="true" layoutX="146.0" layoutY="64.0" prefHeight="96.0" prefWidth="413.0" />
+      <TextArea fx:id="instructionsTextArea" editable="false" layoutX="312.0" layoutY="188.0" prefHeight="153.0" prefWidth="413.0" wrapText="true" />
+      <Button fx:id="deleteButton" layoutX="308.0" layoutY="424.0" mnemonicParsing="false" onAction="#usunPrzepis" text="Usuń przepis" />
+      <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="312.0" layoutY="70.0" prefHeight="96.0" prefWidth="413.0" wrapText="true" />
+      <Button fx:id="editButton" layoutX="421.0" layoutY="424.0" mnemonicParsing="false" onAction="#edytuj" text="Edytuj przepis" />
+      <ScrollPane layoutX="59.0" layoutY="76.0" prefHeight="266.0" prefWidth="200.0">
+         <content>
+            <VBox fx:id="ingredientsContainer" prefHeight="990.0" prefWidth="100.0" >
+            <!-- Tu będą checkboxy dla składników -->
+         </VBox>
+      </content>
+      </ScrollPane>
+      <Button fx:id="saveButton" layoutX="545.0" layoutY="424.0" mnemonicParsing="false" onAction="#zapisz" text="Zapisz" />
    </children>
 </AnchorPane>

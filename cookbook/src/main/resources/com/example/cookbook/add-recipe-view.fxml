@@ -68,6 +68,6 @@
          </image>
       </ImageView>
       <Text layoutX="547.0" layoutY="483.0" style="-fx-font-size: 14px; -fx-font-family: Arial;" text="Dodaj przepis" />
-      <Button layoutX="291.0" layoutY="402.0" mnemonicParsing="false" onAction="#usunSkladnik" text="Button" />
+      <Button layoutX="291.0" layoutY="402.0" mnemonicParsing="false" onAction="#usunSkladnik" text="Usuń składnik" />
    </children>
 </AnchorPane>
