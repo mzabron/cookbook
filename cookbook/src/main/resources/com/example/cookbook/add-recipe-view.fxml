@@ -10,7 +10,7 @@
       <Button fx:id="dodajPrzepisButton" layoutX="555.0" layoutY="395.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#dodajPrzepis" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;" />
 
       <!-- TYTUŁ -->
-      <Text layoutX="30.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-font-family: Graphik; -fx-fill: #577253;" text="DODAJ SWÓJ PRZEPIS:" />
+      <Text layoutX="30.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-font-family: Graphik; -fx-background-color: #F1E9BB; -fx-fill: #577253;" text="DODAJ SWÓJ PRZEPIS:" />
 
       <!-- Przycisk Powrót -->
       <VBox alignment="CENTER" layoutX="550.0" layoutY="400.0" />

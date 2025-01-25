@@ -14,15 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class RecipeListController {
-
-    @FXML
-    private Button goBackButton;
 
     @FXML
     private ListView<String> recipesListView;
@@ -31,7 +25,7 @@ public class RecipeListController {
 
     @FXML
     private void initialize() {
-        loadRecipes(); // Ładowanie tytułów przepisów do ListView
+        loadRecipes();
     }
 
     @FXML
@@ -57,33 +51,46 @@ public class RecipeListController {
 
     @FXML
     public void handleRecipeClick(MouseEvent event) {
-        if (event.getClickCount() == 2) { // Podwójne kliknięcie na przepisie
+        if (event.getClickCount() == 2) {
             String selectedRecipe = recipesListView.getSelectionModel().getSelectedItem();
             if (selectedRecipe != null) {
-                openRecipeDetailsView(selectedRecipe);
+                showRecipeDetails(selectedRecipe);
             }
         }
     }
 
-    private void openRecipeDetailsView(String recipeTitle) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("recipe-details-view.fxml"));
-            Parent root = loader.load();
+    private void showRecipeDetails(String recipeTitle) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
+            String query = "SELECT ingredients, instructions FROM recipes WHERE title = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, recipeTitle);
 
-            // Przekazanie wybranego przepisu do kontrolera szczegółów
-            RecipeDetailsController detailsController = loader.getController();
-            detailsController.titleTextField(recipeTitle);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        String ingredients = resultSet.getString("ingredients");
+                        String instructions = resultSet.getString("instructions");
 
-            Stage stage = (Stage) recipesListView.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        } catch (IOException e) {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("recipe-details-view.fxml"));
+                        Parent root = loader.load();
+
+                        RecipeDetailsController controller = loader.getController();
+                        controller.setRecipeDetails(recipeTitle, ingredients, instructions);
+
+                        Stage stage = new Stage();
+                        stage.setTitle("Szczegóły przepisu");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                    }
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Błąd", "Nie udało się otworzyć szczegółów przepisu.");
         }
     }
 
     @FXML
+    private Button goBackButton;
+
     public void goBack(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
@@ -91,7 +98,7 @@ public class RecipeListController {
             Stage stage = (Stage) goBackButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
     }

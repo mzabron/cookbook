@@ -12,7 +12,7 @@
       <ListView fx:id="recipesListView" layoutX="50.0" layoutY="80.0" onMouseClicked="#handleRecipeClick" prefHeight="300.0" prefWidth="680.0" />
 
       <!-- Przycisk filtruj -->
-      <Button fx:id="filtrujButton" layoutX="551.0" layoutY="394.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#filtruj" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+      <Button fx:id="filtrujButton" layoutX="551.0" layoutY="394.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
          <graphic>
             <ImageView fitHeight="40" fitWidth="40">
                <image>
