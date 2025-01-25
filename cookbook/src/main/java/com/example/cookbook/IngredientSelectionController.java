@@ -6,11 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,23 +27,47 @@ import java.io.IOException;
 public class IngredientSelectionController {
 
     @FXML
-    private ListView<String> recipesListView;
+    private VBox ingredientContainer;
 
     @FXML
-    private CheckBox c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20,
-            c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39, c40, c41, c42;
+    private ListView<String> recipesListView;
+
+    private final List<CheckBox> dynamicCheckBoxes = new ArrayList<>();
+
+    @FXML
+    private Button goBackButton;
 
     @FXML
     private void initialize() {
+        loadIngredients();
+
         recipesListView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) { // Podwójne kliknięcie
+            if (event.getClickCount() == 2) {
                 String selectedRecipe = recipesListView.getSelectionModel().getSelectedItem();
                 if (selectedRecipe != null) {
-                    String recipeTitle = selectedRecipe.split(" \\(")[0]; // Wyciągamy nazwę przepisu bez opisu wspólnych składników
+                    String recipeTitle = selectedRecipe.split(" \\(")[0];
                     showRecipeDetails(recipeTitle);
                 }
             }
         });
+    }
+
+    private void loadIngredients() {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
+            String query = "SELECT name FROM ingredients ORDER BY name";
+            try (PreparedStatement statement = connection.prepareStatement(query);
+                 ResultSet resultSet = statement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    String ingredientName = resultSet.getString("name");
+                    CheckBox checkBox = new CheckBox(ingredientName);
+                    dynamicCheckBoxes.add(checkBox);
+                    ingredientContainer.getChildren().add(checkBox);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -67,25 +92,11 @@ public class IngredientSelectionController {
 
     private List<String> getSelectedIngredients() {
         List<String> selectedIngredients = new ArrayList<>();
-        CheckBox[] checkBoxes = {c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20,
-                c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39, c40, c41, c42};
 
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
-            for (int i = 0; i < checkBoxes.length; i++) {
-                if (checkBoxes[i].isSelected()) {
-                    String query = "SELECT name FROM ingredients WHERE id = ?";
-                    try (PreparedStatement statement = connection.prepareStatement(query)) {
-                        statement.setInt(1, i + 1);
-                        try (ResultSet resultSet = statement.executeQuery()) {
-                            if (resultSet.next()) {
-                                selectedIngredients.add(resultSet.getString("name"));
-                            }
-                        }
-                    }
-                }
+        for (CheckBox checkBox : dynamicCheckBoxes) {
+            if (checkBox.isSelected()) {
+                selectedIngredients.add(checkBox.getText());
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         return selectedIngredients;
@@ -154,9 +165,6 @@ public class IngredientSelectionController {
         }
     }
 
-    @FXML
-    private Button goBackButton;
-
     public void goBack(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
@@ -164,7 +172,7 @@ public class IngredientSelectionController {
             Stage stage = (Stage) goBackButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

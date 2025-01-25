@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddRecipeController {
+
+    @FXML
+    public VBox ingredientContainer;
     @FXML
     private TextField titleTextField;
     @FXML
@@ -23,22 +27,31 @@ public class AddRecipeController {
     @FXML
     private TextField dodajSkladnikTextField;
 
-    @FXML
-    private CheckBox c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
-            c11, c12, c13, c14, c15, c16, c17, c18, c19, c20,
-            c21, c22, c23, c24, c25, c26, c27, c28, c29, c30,
-            c31, c32, c33, c34, c35, c36, c37, c38, c39, c40,
-            c41, c42;
-
     private final List<CheckBox> checkBoxList = new ArrayList<>();
 
     @FXML
     public void initialize() {
-        checkBoxList.addAll(List.of(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
-                c11, c12, c13, c14, c15, c16, c17, c18, c19, c20,
-                c21, c22, c23, c24, c25, c26, c27, c28, c29, c30,
-                c31, c32, c33, c34, c35, c36, c37, c38, c39, c40,
-                c41, c42));
+        loadIngredientsFromDatabase();
+    }
+
+    private void loadIngredientsFromDatabase() {
+        ingredientContainer.getChildren().clear(); // Usuwamy poprzednie checkboxy
+
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:data/recipes.db")) {
+            String query = "SELECT name FROM ingredients";
+            try (Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery(query)) {
+
+                while (resultSet.next()) {
+                    String ingredientName = resultSet.getString("name");
+                    CheckBox checkBox = new CheckBox(ingredientName);
+                    ingredientContainer.getChildren().add(checkBox);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Błąd", "Nie udało się załadować składników z bazy danych.");
+        }
     }
 
     @FXML
