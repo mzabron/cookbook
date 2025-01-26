@@ -5,9 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<StackPane minHeight="520" minWidth="780" style="-fx-background-color: #A8B1D4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.HelloController">
 
-<StackPane minHeight="520" minWidth="780" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.HelloController">
-    <HBox alignment="center" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="60" style="-fx-background-color: #A8B1D4;">
+    <HBox alignment="center" spacing="60" style="-fx-background-color: #A8B1D4;">
+
 
         <!-- Przycisk Wprowadź składniki -->
         <VBox alignment="center" spacing="10">
