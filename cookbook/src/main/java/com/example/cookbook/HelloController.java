@@ -19,6 +19,8 @@ public class HelloController {
     private Button goToRecipeListButton;
     @FXML
     private Button goToAddRecipeButton;
+    @FXML
+    private Button heartButton;
 
     @FXML
     public void goToIngredientSelection(ActionEvent actionEvent) {
@@ -58,6 +60,21 @@ public class HelloController {
             Parent root = loader.load();
             // Pobranie aktualnej sceny i ustawienie nowego widoku
             Stage stage = (Stage) goToAddRecipeButton.getScene().getWindow();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void openFav(ActionEvent actionEvent) {
+        try {
+            // Ładowanie nowego widoku
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fav-list-view.fxml"));
+            Parent root = loader.load();
+            // Pobranie aktualnej sceny i ustawienie nowego widoku
+            Stage stage = (Stage) heartButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
         }catch (IOException e){

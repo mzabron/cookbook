@@ -54,5 +54,18 @@
                 </font></Text>
         </VBox>
     </HBox>
+
+
+           <Button fx:id="heartButton" minHeight="50" minWidth="50" onAction="#openFav" style="-fx-background-color: #A8B1D4; -fx-background-radius: 30;">
+               <graphic>
+                   <ImageView fitHeight="30" fitWidth="30">
+                       <image>
+                           <Image url="@../../../images/heart2.png" />
+                       </image>
+                   </ImageView>
+               </graphic>
+           </Button>
     </VBox>
+
+
 </StackPane>
