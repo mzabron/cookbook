@@ -204,6 +204,7 @@ public class RecipeListController {
 
     @FXML
     private void edytuj() {
+        showAlert(Alert.AlertType.INFORMATION, "Edycja", "Jesteś teraz w trybie edycji.");
         for (var node : ingredientsContainer.getChildren()) {
             if (node instanceof CheckBox) {
                 CheckBox checkBox = (CheckBox) node;

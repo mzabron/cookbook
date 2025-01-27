@@ -150,7 +150,7 @@ public class AddRecipeController {
 
                 showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został dodany pomyślnie!");
                 dodajSkladnikTextField.clear();
-                loadIngredientsFromDatabase(); // Odświeżanie listy składników
+                loadIngredientsFromDatabase();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -177,7 +177,7 @@ public class AddRecipeController {
                 if (rowsAffected > 0) {
                     showAlert(Alert.AlertType.INFORMATION, "Sukces", "Składnik został usunięty pomyślnie!");
                     dodajSkladnikTextField.clear();
-                    loadIngredientsFromDatabase(); // Odświeżanie listy składników
+                    loadIngredientsFromDatabase();
                 } else {
                     showAlert(Alert.AlertType.WARNING, "Błąd", "Składnik o podanej nazwie nie istnieje!");
                 }

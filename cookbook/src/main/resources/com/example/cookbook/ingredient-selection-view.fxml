@@ -22,7 +22,7 @@
       <!-- Lista z checkboxami -->
       <ScrollPane layoutX="30.0" layoutY="80.0" prefHeight="320.0" prefWidth="200.0" style="-fx-background-color: #A8B1D4;">
          <content>
-            <VBox fx:id="ingredientContainer" spacing="10" style="-fx-background-color: #A8B1D4;">
+            <VBox fx:id="ingredientContainer" prefHeight="319.0" prefWidth="185.0" spacing="10" style="-fx-background-color: #A8B1D4;">
             </VBox>
          </content>
       </ScrollPane>

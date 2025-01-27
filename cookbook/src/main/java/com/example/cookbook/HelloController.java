@@ -23,10 +23,8 @@ public class HelloController {
     @FXML
     public void goToIngredientSelection(ActionEvent actionEvent) {
         try {
-            // Ładowanie nowego widoku
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ingredient-selection-view.fxml"));
             Parent root = loader.load();
-            // Pobranie aktualnej sceny i ustawienie nowego widoku
             Stage stage = (Stage) goToIngredientSelectionButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
@@ -38,10 +36,8 @@ public class HelloController {
     @FXML
     public void goToRecipeList(ActionEvent actionEvent) {
         try {
-            // Ładowanie nowego widoku
             FXMLLoader loader = new FXMLLoader(getClass().getResource("recipe-list-view.fxml"));
             Parent root = loader.load();
-            // Pobranie aktualnej sceny i ustawienie nowego widoku
             Stage stage = (Stage) goToRecipeListButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
@@ -53,10 +49,8 @@ public class HelloController {
     @FXML
     public void goToAddRecipe(ActionEvent actionEvent) {
         try {
-            // Ładowanie nowego widoku
             FXMLLoader loader = new FXMLLoader(getClass().getResource("add-recipe-view.fxml"));
             Parent root = loader.load();
-            // Pobranie aktualnej sceny i ustawienie nowego widoku
             Stage stage = (Stage) goToAddRecipeButton.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
