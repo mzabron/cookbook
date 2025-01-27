@@ -10,10 +10,15 @@
 
       <Text layoutX="61.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-font-family: Graphik; -fx-fill: #577253;" text="WYBIERZ PRZEPIS Z LISTY:" />
 
-      <ChoiceBox fx:id="recipesChoiceBox" layoutX="59.0" layoutY="67.0" prefHeight="26.0" prefWidth="666.0" />
-      <TextArea fx:id="instructionsTextArea" editable="false" layoutX="312.0" layoutY="237.0" prefHeight="153.0" prefWidth="413.0" wrapText="true" />
-      <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="312.0" layoutY="118.0" prefHeight="96.0" prefWidth="413.0" wrapText="true" />
-      <ScrollPane layoutX="59.0" layoutY="118.0" prefHeight="266.0" prefWidth="200.0">
+      <!-- TYTUŁ PRZEPISU -->
+      <Text layoutX="316.0" layoutY="111.0" style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Składniki:" />
+
+      <Text layoutX="313.0" layoutY="233.0" style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Instrukcje:" />
+
+      <ChoiceBox fx:id="recipesChoiceBox" layoutX="59.0" layoutY="58.0" prefHeight="26.0" prefWidth="666.0" />
+      <TextArea fx:id="instructionsTextArea" editable="false" layoutX="312.0" layoutY="242.0" prefHeight="148.0" prefWidth="413.0" wrapText="true" />
+      <TextArea fx:id="ingredientsTextArea" editable="false" layoutX="312.0" layoutY="118.0" prefHeight="89.0" prefWidth="413.0" wrapText="true" />
+      <ScrollPane layoutX="59.0" layoutY="117.0" prefHeight="266.0" prefWidth="200.0">
          <content>
             <VBox fx:id="ingredientsContainer" prefHeight="990.0" prefWidth="100.0">
             <!-- Tu będą checkboxy dla składników -->
