@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.IngredientSelectionController" style="-fx-background-color: #A8B1D4;">
+<AnchorPane prefHeight="520.0" prefWidth="780.0" style="-fx-background-color: #A8B1D4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookbook.IngredientSelectionController">
    <children>
       <!-- Tytuł -->
       <Text layoutX="30.0" layoutY="40.0" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-font-family: Graphik; -fx-fill: #577253;" text="WPROWADŹ SKŁADNIKI, wybierz te, które posiadasz:">
@@ -20,46 +14,46 @@
          </font></Text>
 
       <!-- Przycisk Szukaj przepisów -->
-      <VBox layoutX="250.0" layoutY="425.0" alignment="CENTER">
-         <Button fx:id="szukajPrzepisowButton" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#szukajPrzepisow"
-                 style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
-            <graphic>
-               <ImageView fitHeight="40" fitWidth="40">
-                  <image>
-                     <Image url="@../../../images/magnifier.png" />
-                  </image></ImageView>
-            </graphic>
-         </Button>
-         <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Szukaj przepisów">
-            <font>
-               <Font name="Graphik-Regular" size="14.0" />
-            </font></Text>
-      </VBox>
+      <VBox alignment="CENTER" layoutX="250.0" layoutY="425.0" />
 
       <!-- Przycisk powrót -->
-      <VBox layoutX="450.0" layoutY="425.0" alignment="CENTER">
-         <Button fx:id="goBackButton" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#goBack"
-                 style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
-            <graphic>
-               <ImageView fitHeight="40" fitWidth="40">
-                  <image>
-                     <Image url="@../../../images/arrow1.png" />
-                  </image></ImageView>
-            </graphic>
-         </Button>
-         <Text style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Powrót">
-            <font>
-               <Font name="Graphik-Regular" size="14.0" />
-            </font></Text>
-      </VBox>
+      <VBox alignment="CENTER" layoutX="450.0" layoutY="425.0" />
 
       <!-- Lista z checkboxami -->
-      <ScrollPane layoutX="30.0" layoutY="80.0" prefHeight="330.0" prefWidth="200.0" style="-fx-background-color: #A8B1D4;">
+      <ScrollPane layoutX="30.0" layoutY="80.0" prefHeight="320.0" prefWidth="200.0" style="-fx-background-color: #A8B1D4;">
          <content>
-            <VBox fx:id="ingredientContainer" spacing="10" style="-fx-background-color: #A8B1D4;" >
+            <VBox fx:id="ingredientContainer" spacing="10" style="-fx-background-color: #A8B1D4;">
             </VBox>
          </content>
       </ScrollPane>
-      <ListView fx:id="recipesListView" layoutX="260.0" layoutY="80.0" prefHeight="330.0" prefWidth="460.0"  />
+      <ListView fx:id="recipesListView" layoutX="260.0" layoutY="80.0" prefHeight="320.0" prefWidth="460.0" />
+      <Button fx:id="goBackButton" layoutX="650.0" layoutY="414.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+         <graphic>
+            <ImageView fitHeight="40" fitWidth="40">
+               <image>
+                  <Image url="@../../../images/arrow1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="658.0" layoutY="502.0" style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Powrót">
+         <font>
+            <Font name="Graphik-Regular" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="szukajPrzepisowButton" layoutX="542.0" layoutY="414.0" minHeight="70" minWidth="70" mnemonicParsing="false" onAction="#szukajPrzepisow" style="-fx-background-color: #F1E9BB; -fx-background-radius: 20;">
+         <graphic>
+            <ImageView fitHeight="40" fitWidth="40">
+               <image>
+                  <Image url="@../../../images/magnifier.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="512.0" layoutY="503.0" style="-fx-font-size: 16px; -fx-font-family: Graphik;" text="Szukaj przepisów">
+         <font>
+            <Font name="Graphik-Regular" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
