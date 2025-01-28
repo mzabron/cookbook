@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS recipes (
                                        instructions TEXT NOT NULL
 );
 
--- Przepisy z ilościami składników i szczegółowymi instrukcjami
 INSERT INTO recipes (title, ingredients, instructions) VALUES
 ('Spaghetti Aglio e Olio', 'Składniki: 200g makaronu spaghetti, 4 ząbki czosnku, 50ml oliwy z oliwek, świeża bazylia, parmezan (opcjonalnie)',
  '1. Ugotuj makaron al dente w osolonej wodzie zgodnie z instrukcją na opakowaniu. 2. W międzyczasie obierz czosnek i pokrój go w cienkie plasterki. 3. Na dużej patelni rozgrzej oliwę z oliwek, dodaj czosnek i smaż na średnim ogniu przez około 2-3 minuty, aż czosnek stanie się złocisty, ale nie przypalony. 4. Dodaj ugotowany makaron na patelnię z czosnkiem i oliwą, wymieszaj dokładnie. 5. Na koniec posyp świeżo posiekaną bazylią oraz parmezanem, jeżeli lubisz.')
